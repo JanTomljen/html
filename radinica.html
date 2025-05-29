@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TVZ - Radionice</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar navbar-expand-lg navbar-light bg-info fixed-top p-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="radionice.css"> <img src="tvz-logo.png" alt="TVZ Logo" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="pocetna.html">O NAMA</a> </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="radionice.html">Radionice</a> </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Kontakti</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FQA</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="container py-5" style="padding-top: 100px !important;">
+        <section class="radionice-section text-center">
+            <h1 class="mb-5">Radionice</h1>
+
+            <div class="filter-section d-flex align-items-center justify-content-start mb-5 mx-auto" style="max-width: 800px;">
+                <label for="uzrast-filter" class="form-label me-3 fw-bold fs-5">filtriraj po uzrastu:</label>
+                <select class="form-select w-auto" id="uzrast-filter" aria-label="Filter by age">
+                    <option selected>Svi uzrasti</option>
+                    <option value="6-8">6-8 godina</option>
+                    <option value="9-12">9-12 godina</option>
+                    <option value="13-16">13-16 godina</option>
+                    <option value="odrasli">Odrasli</option>
+                </select>
+            </div>
+
+            <div class="lista-radionica mx-auto" style="max-width: 800px;">
+                <div class="radionica-item d-flex flex-column flex-md-row align-items-center justify-content-between p-3 mb-4">
+                    <div class="radionica-image-placeholder mb-3 mb-md-0 me-md-4">
+                        <img src="images (1).jpg" alt="Djeca uče robotiku" class="img-fluid" style="width: 150px; height: 100px; object-fit: cover; border-radius: 5px;">
+                    </div>
+                    <div class="radionica-text flex-grow-1 text-center text-md-start mb-3 mb-md-0">
+                        <p class="fw-bold fs-5 mb-0">Robotska radionica za djecu</p>
+                    </div>
+                    <button class="btn btn-dark prijava-btn">Prijavi</button>
+                </div>
+
+                <div class="radionica-item d-flex flex-column flex-md-row align-items-center justify-content-between p-3 mb-4">
+                    <div class="radionica-image-placeholder mb-3 mb-md-0 me-md-4">
+                        <img src="preuzmi.jpg" alt="Lego Mindstorms robot rješava Rubikovu kocku" class="img-fluid" style="width: 150px; height: 100px; object-fit: cover; border-radius: 5px;">
+                    </div>
+                    <div class="radionica-text flex-grow-1 text-center text-md-start mb-3 mb-md-0">
+                        <p class="fw-bold fs-5 mb-0">Izazov Rubikove kocke s robotom</p>
+                    </div>
+                    <button class="btn btn-dark prijava-btn">Prijavi</button>
+                </div>
+
+                 <div class="radionica-item d-flex flex-column flex-md-row align-items-center justify-content-between p-3 mb-4">
+                    <div class="radionica-image-placeholder mb-3 mb-md-0 me-md-4">
+                        <img src="preuzmi.png" alt="Mini TVZ Festival znanosti plakat" class="img-fluid" style="width: 150px; height: 100px; object-fit: cover; border-radius: 5px;">
+                    </div>
+                    <div class="radionica-text flex-grow-1 text-center text-md-start mb-3 mb-md-0">
+                        <p class="fw-bold fs-5 mb-0">Mini TVZ @ Festival znanosti</p>
+                    </div>
+                    <button class="btn btn-dark prijava-btn">Prijavi</button>
+                </div>
+
+                </div>
+        </section>
+    </main>
+
+<footer class="bg-info text-dark p-3">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+            <p class="mb-0 fw-bold">FOOTER</p>
+            <div class="social-icons d-flex gap-3">
+                <a href="#" class="text-dark fs-4"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-dark fs-4"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="text-dark fs-4"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
