@@ -1,0 +1,259 @@
+/* Vaši originalni stilovi za body i header */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Exo 2", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    flex-direction: row; /* Defaultno horizontalno */
+    background-color: #20a7a7;
+    justify-content: flex-end; /* Ovo gura navigacijske linkove udesno */
+    padding: 2.5em;
+    align-items: center;
+    /* Dodajmo flex-wrap da omogući prelamanje, ključno za responsivnost */
+    flex-wrap: wrap; /* Omogućuje prelamanje elemenata u novi red ako nema mjesta */
+    min-height: 80px; /* Dodajte minimalnu visinu da header ima prostora */
+}
+
+header img {
+    height: 40px;
+    margin-right: 1em;
+    /* S obzirom na sliku "TVZ. mini" teksta, ako je to dio ove slike,
+       trebat ćete kasnije razmisliti o boljoj strukturi za logo.
+       Za sada ćemo ovo samo prilagoditi rasporedu. */
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+    font-size: 20px;
+    margin-left: 1em;
+}
+
+header a:hover {
+    font-weight: bold;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.aktivan {
+    font-weight: bold;
+}
+
+/* Klasa minitvz koju spominjete, stilizirana je već u vašem originalnom kodu */
+.minitvz {
+    margin-right: auto; /* Ovo gura "MiniTVZ" link na lijevu stranu headera */
+    transform: none;
+    font-weight: bold;
+}
+
+.minitvz:hover {
+    transform: none;
+}
+
+footer {
+    display: flex;
+    background-color: rgb(0, 143, 143);
+    padding: 2.5em;
+    font-size: 20px;
+    justify-content: center;
+    margin-top: auto; /* Gura footer na dno stranice */
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+}
+
+.ig {
+    font-size: 25px;
+}
+
+/* Ovdje počinje CSS za "O nama" stranicu (s klasama) */
+
+main {
+    flex-grow: 1; /* Omogućuje main elementu da zauzme sav preostali prostor */
+    padding: 2em; /* Dodaje malo prostora oko glavnog sadržaja */
+    line-height: 1.6; /* Povećava razmak između redaka za bolju čitljivost */
+    color: #333; /* Tamniji tekst za bolji kontrast */
+}
+
+/* Opći stilovi za sve sekcije (o-projektu, voditelji, itd.) */
+.o-projektu,
+.voditelji,
+.trenutni-studenti,
+.bivsi-studenti,
+.kontakt-informacije {
+    margin-bottom: 2em; /* Razmak između sekcija */
+    padding: 1.5em; /* Unutarnji razmak unutar svake sekcije */
+    border-radius: 8px; /* Zaobljeni rubovi sekcija */
+    background-color: #f9f9f9; /* Svijetla pozadina za sekcije */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Blaga sjena za dubinu */
+}
+
+h2 {
+    color: #20a7a7; /* Boja naslova koja se podudara s headerom */
+    margin-bottom: 1em; /* Razmak ispod naslova */
+    text-align: center; /* Centriranje naslova */
+    font-size: 2.2em; /* Veći font za naslove sekcija */
+    border-bottom: 2px solid #20a7a7; /* Linija ispod naslova */
+    padding-bottom: 0.5em; /* Razmak između naslova i linije */
+}
+
+h3 {
+    color: #333; /* Tamnija boja za podnaslove */
+    margin-top: 1.5em; /* Razmak iznad podnaslova */
+    margin-bottom: 0.8em; /* Razmak ispod podnaslova */
+    font-size: 1.6em; /* Veličina fonta za podnaslove */
+}
+
+p {
+    margin-bottom: 1em; /* Razmak ispod paragrafa */
+    font-size: 1.1em; /* Nešto veći font za tekst */
+}
+
+ul {
+    list-style-type: disc; /* Klasične točke za liste */
+    margin-left: 2em; /* Uvlačenje liste */
+    margin-bottom: 1em; /* Razmak ispod liste */
+}
+
+li {
+    margin-bottom: 0.5em; /* Razmak između stavki liste */
+    font-size: 1.1em; /* Veličina fonta za stavke liste */
+}
+
+/* Stilovi za odjeljak s voditeljima nastavnicima */
+.lista-voditelja {
+    display: flex;
+    flex-wrap: wrap; /* Omogućuje prelamanje elemenata u novi red ako nema mjesta */
+    justify-content: center; /* Centriranje kartica voditelja */
+    gap: 2em; /* Razmak između kartica voditelja */
+    margin-top: 1.5em;
+}
+
+.voditelj-kartica {
+    background-color: #ffffff; /* Bijela pozadina za kartice voditelja */
+    border: 1px solid #ddd; /* Lagani obrub */
+    border-radius: 8px;
+    padding: 1.5em;
+    text-align: center;
+    flex: 0 1 calc(33% - 2em); /* Omogućuje tri kartice po redu (prilagodite po potrebi) */
+    box-sizing: border-box; /* Važno za ispravno računanje širine s paddingom */
+    min-width: 250px; /* Minimalna širina kartice */
+    transition: transform 0.3s ease; /* Glatka tranzicija za hover efekt */
+}
+
+.voditelj-kartica:hover {
+    transform: translateY(-5px); /* Lagani pomak prema gore na hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Jača sjena na hover */
+}
+
+.voditelj-kartica img {
+    width: 120px; /* Fiksna širina za profilne slike */
+    height: 120px; /* Fiksna visina za profilne slike */
+    border-radius: 50%; /* Kružni oblik slike */
+    object-fit: cover; /* Osigurava da se slika pravilno popuni bez izobličenja */
+    margin-bottom: 1em; /* Razmak ispod slike */
+    border: 3px solid #20a7a7; /* Okvir oko slike */
+}
+
+.voditelj-kartica h3 {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    color: #20a7a7;
+    font-size: 1.4em;
+}
+
+.voditelj-kartica p a {
+    color: #007bff; /* Plava boja za linkove */
+    text-decoration: none; /* Uklanja podcrtavanje */
+    transition: color 0.3s ease;
+}
+
+.voditelj-kartica p a:hover {
+    text-decoration: underline; /* Podcrtava link na hover */
+    color: #0056b3; /* Tamnija plava na hover */
+}
+
+/* Stilovi za horizontalnu liniju */
+hr {
+    border: none;
+    border-top: 1px solid #ccc; /* Svijetlosiva linija */
+    margin: 3em auto; /* Razmak iznad i ispod linije, centrirana */
+    width: 80%; /* Širina linije */
+}
+
+/* Stilovi za kontakt sekciju */
+.kontakt-informacije p,
+.kontakt-informacije h3 {
+    text-align: center; /* Centriranje teksta u kontakt sekciji */
+}
+
+.kontakt-informacije p strong {
+    display: block; /* Svaki strong element u novi red za adresu */
+    margin-bottom: 0.5em;
+}
+
+@media (max-width: 768px) {
+    .voditelj-kartica {
+        flex: 0 1 calc(50% - 2em);
+    }
+
+    /* OVDJE SU KRITIČNI STILOVI ZA MOBILNI PRIKAZ HEADERA */
+    header {
+        flex-direction: column; /* Slaže elemente unutar headera vertikalno */
+        align-items: center; /* Centriranje svih elemenata unutar headera horizontalno */
+        padding: 1.5em 1em; /* Manji padding za mobilni prikaz */
+        min-height: auto; /* Omogućuje headeru da se automatski proširi po visini */
+        box-sizing: border-box; /* Važno da padding ne uzrokuje overflow */
+    }
+
+    header img {
+        margin-right: 0; /* Uklanja desnu marginu */
+        margin-bottom: 1em; /* Dodaje razmak ispod loga "TVZ. mini" */
+        height: 50px; /* Malo veća visina za bolju vidljivost, prilagodite po potrebi */
+    }
+
+    .minitvz {
+        margin-right: 0; /* Uklanja margin-right: auto; da bi se centrirao */
+        margin-bottom: 1em; /* Dodaje razmak ispod "MiniTVZ" linka */
+        text-align: center; /* Centriranje teksta "MiniTVZ" */
+        width: 100%; /* Omogućuje mu da zauzme cijelu širinu i bude centriran */
+        font-size: 24px; /* Malo veći font za "MiniTVZ" na mobilnom */
+    }
+
+    /* Stilovi za sve ostale navigacijske linkove u headeru (O nama, Radionice, itd.) */
+    header a:not(.minitvz) {
+        margin-left: 0; /* Uklanja lijevu marginu */
+        margin-bottom: 0.8em; /* Povećava razmak između vertikalnih linkova */
+        text-align: center; /* Centriranje teksta linkova */
+        width: 100%; /* Da zauzmu cijelu širinu i budu centrirani */
+        font-size: 22px; /* Malo veći font za navigacijske linkove na mobilnom */
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 1em;
+    }
+
+    .voditelj-kartica {
+        flex: 0 1 100%;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    h3 {
+        font-size: 1.4em;
+    }
+}
