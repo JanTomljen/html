@@ -131,3 +131,92 @@ hr {
     background-color: #177a7a;
     transform: translateY(-3px);
 }
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Make header items stack vertically */
+        padding: 1.5em;
+        justify-content: center; /* Center items horizontally */
+        align-items: center; /* Center items vertically */
+    }
+
+    header img {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 1em; /* Add space below the logo */
+    }
+
+    header a {
+        font-size: 18px;
+        margin: 0.5em 0; /* Add vertical margin, remove horizontal */
+        text-align: center; /* Center the text of the links */
+    }
+
+    .minitvz {
+        margin-right: 0; /* Remove auto margin */
+        margin-bottom: 1em; /* Add space below "MiniTVZ" link */
+        width: 100%; /* Make it take full width to center effectively */
+        text-align: center;
+    }
+
+    .galerija {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    .galerija img {
+        height: 150px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    footer {
+        padding: 1.5em;
+        font-size: 18px;
+        flex-direction: column; /* Stack footer items vertically */
+        align-items: center; /* Center footer items */
+    }
+
+    footer a {
+        margin: 5px 0; /* Add vertical margin for stacked footer links */
+    }
+}
+
+/* For screens smaller than 480px (e.g., mobile phones) */
+@media (max-width: 480px) {
+    header {
+        padding: 1em;
+    }
+
+    header img {
+        margin-bottom: 1em;
+    }
+
+    header a {
+        font-size: 16px;
+        margin: 0.3em 0;
+    }
+
+    .minitvz {
+        margin-bottom: 0.5em;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .galerija {
+        grid-template-columns: 1fr;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .galerija img {
+        height: 180px;
+    }
+
+    footer {
+        padding: 1em;
+        font-size: 16px;
+    }
+}
