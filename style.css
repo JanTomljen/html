@@ -1,268 +1,104 @@
-/* GLOBALNI STILOVI (od pocetna.html) */
-body {
+body{
     margin: 0;
-    font-family: Arial, sans-serif; /* Primjer: Arial font */
-    background-color: #E6E6E6; /* Svijetlo siva za pozadinu tijela stranice */
-    color: #333; /* Boja teksta */
-
-    /* ***** KLJUČNE PROMJENE ZA STICKY FOOTER ***** */
-    display: flex; /* Postavi body kao flex kontejner */
-    flex-direction: column; /* Složi elemente vertikalno */
-    min-height: 100vh; /* Minimalna visina body-a je 100% visine preglednika */
-    /* ******************************************* */
+    padding: 0;
+    font-family: "Exo 2", sans-serif;
 }
 
-/* Prilagodbe za Bootstrap navigaciju */
-.navbar {
-    background-color: #B4FCF8 !important; /* Pozadina header-a */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* Ne treba fiksnu poziciju više za sticky footer */
-    /* Ukloni ili komentiraj: position: fixed; top: 0; width: 100%; */
-}
-
-.navbar-brand img {
-    height: 50px; /* Veličina loga */
-}
-
-.nav-link {
-    color: #333 !important; /* Boja teksta navigacijskih linkova je uvijek crna */
-    font-weight: normal; /* Podrazumijevano normalan font-weight */
-    font-size: 1.1em;
-    padding: 5px 10px; /* Padding unutar linkova */
-    transition: font-weight 0.3s ease, color 0.3s ease; /* Dodaj transition za font-weight */
-}
-
-/* Kada hoveraš preko linka */
-.nav-link:hover {
-    color: #333 !important; /* Ostaje crna */
-    font-weight: bold; /* Slova postaju bold */
-}
-
-/* Kada je link aktivan (kliknut) */
-.nav-link.active {
-    color: #333 !important; /* Ostaje crna */
-    font-weight: bold; /* Slova ostaju bold */
-}
-
-/* ***** KLJUČNE PROMJENE ZA STICKY FOOTER - MAIN ELEMENT ***** */
-main {
-    flex-grow: 1; /* Omogući main elementu da zauzme sav preostali prostor */
-    /* Ukloni padding-top iz HTML-a i postavi ga ovdje ako je potrebno */
-    /* Ako i dalje treba padding na vrhu zbog fiksnog headera, dodaj ga ovdje */
-    padding-top: 100px; /* Primjer: prilagodi ovo visini tvog headera */
-}
-/* ********************************************************** */
-
-
-/* Stilovi za POCETNA.HTML sekciju */
-.notifications-section h1 {
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 40px;
-}
-
-.notification-boxes,
-.notification-details {
-    max-width: 1200px; /* Kontrola širine na velikim ekranima */
-    width: 100%;
-    margin-bottom: 50px;
-}
-
-.notification-item,
-.detail-item {
-    background-color: #FFFFFF;
-    border: 1px solid #CCC;
-    border-radius: 8px;
-    padding: 30px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
+header{
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    background-color: #20a7a7;
+    justify-content: flex-end;
+    padding: 2.5em;
     align-items: center;
-    text-align: center;
 }
 
-.detail-item {
-    text-align: left;
-    align-items: flex-start;
-    padding: 35px;
+header a{
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+    font-size: 20px;
+    margin-left: 1em;
 }
 
-.notification-item:hover,
-.detail-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+header a:hover{
+    font-weight: bold;
+    -webkit-transform: scale(1.2);
 }
 
-.notification-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.notification-item h2 {
-    font-size: 1.6em;
-    color: #007bff;
-    margin-bottom: 15px;
-    margin-top: 0;
-}
-
-.detail-item h3 {
-    font-size: 1.6em;
-    color: #007bff;
-    margin-bottom: 15px;
-}
-
-.notification-item p,
-.detail-item p {
-    font-size: 1.05em;
-    line-height: 1.7;
-    color: #555;
-    margin-bottom: 0;
-}
-
-
-/* GLOBALNI STILOVI (Footer) */
-footer {
-    background-color: #B4FCF8 !important; /* Pozadina footer-a */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-    color: #333 !important; /* Boja teksta footer-a */
-    /* Ne treba mu fiksna pozicija, jer ga flexbox drži na dnu */
-}
-
-.social-icons a {
-    color: #333 !important; /* Boja ikona */
-    font-size: 1.5em;
-    transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-    color: #007bff !important;
-}
-
-/* STILOVI SPECIFIČNI ZA RADIONICE.HTML */
-
-.radionice-section h1 {
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 40px;
-}
-
-.filter-section {
-    padding: 15px;
-    border: 1px solid #CCC;
-    border-radius: 8px;
-    background-color: #FFFFFF;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    margin-bottom: 50px;
-    max-width: 800px;
-    justify-content: flex-start;
-    padding-left: 30px;
-}
-
-.filter-section .form-select {
-    border: 1px solid #000;
-    border-radius: 0;
-    font-size: 1.1em;
-    padding: 0.5em 1em;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23333' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+.naslovnica{
+    display: flex;
+    background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.6), 
+          rgba(0, 0, 0, 0.6)
+        ),
+        url("https://www.tvz.hr/wp-content/uploads/2022/06/prom2-scaled.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: right 0.75rem center;
-    background-size: 16px 12px;
-}
-
-
-.radionica-item {
-    background-color: #FFFFFF;
-    border: 1px solid #CCC;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    align-items: center;
-}
-
-.radionica-item:not(:last-child) {
-    margin-bottom: 20px;
-}
-
-.radionica-image-placeholder {
-    width: 150px;
-    height: 100px;
-    background-color: #D3D3D3;
-    display: flex;
+    height: 600px;
+    width: 100%;
     justify-content: center;
     align-items: center;
-    font-style: italic;
-    color: #888;
-    border-radius: 5px;
-    overflow: hidden;
+    color: azure;
 }
 
-.radionica-image-placeholder img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-}
-
-.radionica-text p {
-    margin-bottom: 0;
-    font-size: 1.2em;
-    color: #333;
-}
-
-.prijava-btn {
-    background-color: #000;
-    color: #FFF;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 5px;
+.active{
     font-weight: bold;
-    transition: background-color 0.3s ease;
 }
 
-.prijava-btn:hover {
-    background-color: #333;
-    color: #FFF;
+.MiniTVZ{
+    margin-right: auto;
 }
 
-/* Prilagodbe za manje ekrane */
-@media (max-width: 767.98px) {
-    .filter-section {
-        flex-direction: column;
-        align-items: flex-start;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
+.MiniTVZ:hover{
+    transform: none;
+}
 
-    .filter-section label {
-        margin-bottom: 10px;
-        margin-right: 0 !important;
-    }
+article{
+    padding: 100px;
+    padding-top: 0;
+}
 
-    .filter-section .form-select {
-        width: 100% !important;
-    }
+article h1{
+    font-weight: bold;
+    font-size: xx-large;
+}
 
-    .radionica-item {
-        flex-direction: column;
-        text-align: center;
-    }
+article hr{
+    margin-bottom: 50px;
+    height: 1px;
+    background-color: black;
+    border: none;
+}
 
-    .radionica-image-placeholder {
-        margin-bottom: 15px;
-        margin-right: 0 !important;
-        width: 100%;
-        height: 150px;
-    }
+.obavijesti{
+    display: flex;
+    justify-content: space-around;
+}
 
-    .radionica-text {
-        margin-bottom: 15px;
-    }
+.obavijestContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    max-width: 300px;
+    text-align: left;
+    background-color: #d3d3d3;
+}
+
+footer{
+    display: flex;
+    background-color: rgb(0, 143, 143);
+    padding: 2.5em;
+    font-size: 20px;
+    justify-content: center;
+}
+
+footer a{
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+}
+
+.ig{
+    font-size: 25px;
 }

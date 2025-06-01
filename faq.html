@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="hr"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniTVZ - FAQ</title> <meta name="Author" content="SmartWeb">
+    <meta name="Description" content="Često postavljana pitanja o MiniTVZ inicijativi i radionicama."> <meta name="Keywords" content="MiniTVZ, FAQ, često postavljana pitanja, robotika, radionice, TVZ"> <link rel="stylesheet" href="style.css"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="faq.css">
+    <link rel="icon" href="https://i.postimg.cc/fbzwjc71/ZAMkwPA.png" type="image/png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+
+    <header>
+        <a href="index.html" class="minitvz">MiniTVZ</a>
+        <a href="onama.html">O nama</a>
+        <a href="radionice.html">Radionice</a>
+        <a href="partneri.html" >Partneri</a>
+        <a href="galerija.html">Galerija</a>      
+        <a href="faq.html"class = "aktivan">FAQ</a>    
+    </header>
+
+    <div class="glavni-sadrzaj"> <h1>FAQs</h1>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Što je MiniTVZ?
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                <p>MiniTVZ je niz besplatnih edukativnih radionica iz područja robotike i programiranja, namijenjenih učenicima viših razreda osnovne škole. Projekt organiziraju studenti i nastavnici Tehničkog veleučilišta u Zagrebu.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+              Tko se može prijaviti na radionice?
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Radionice su namijenjene učenicima od 5. do 8. razreda osnovne škole, bez obzira na prethodno znanje.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Jesu li radionice besplatne?
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Da, sve radionice su potpuno besplatne za sve sudionike.
+
+</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Kako se prijaviti na radionice?
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Prijava se vrši putem obrasca na službenoj web stranici. Potrebno je ispuniti osnovne podatke i odabrati željenu radionicu.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Koliko traje jedna radionica?
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Jedna radionica traje 60 minuta, a održava se vikendom u prostorijama TVZ-a.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+            Koje se teme obrađuju na radionicama?
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+               <h3>Teme uključuju:</h3>
+<ul>
+  <li>Uvod u robotiku i programiranje</li>
+  <li>Senzori i aktuatori</li>
+  <li>Arduino mikrokontroleri</li>
+  <li>Izrada jednostavnog robota</li>
+</ul>
+            </div>
+        </div>
+
+            <div class="faq-item">
+            <div class="faq-question">
+                Trebaju li djeca donijeti svoju opremu?
+                <span>+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Ne, sva potrebna oprema (računala, mikrokontroleri, senzori) osigurana je na licu mjesta.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <a href="index.html">MiniTVZ</a>
+        <a href="https://www.instagram.com/minitvz/" target="_blank" class="ig"><i class="fab fa-instagram"></i></a>      
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.closest('.faq-item');
+                    faqItem.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
