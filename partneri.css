@@ -22,9 +22,8 @@ header {
 }
 
 header img {
-    margin-right: auto; /* Pushes the logo to the left */
-    height: 50px; /* Fixed height for the logo */
-    object-fit: contain; /* Ensures the image scales properly within its container */
+    height: 40px;
+    margin-right: 1em;
 }
 
 header a {
