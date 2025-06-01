@@ -71,61 +71,56 @@ header a:hover {
     padding-right: 30px;
 }
 
-.lista-radionica { 
+.stavka-radionice {
     display: flex;
-    flex-direction: column;
-    gap: 20px; 
-}
-
-.stavka-radionice { 
-    display: flex;
-    align-items: center;
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 25px;
+    align-items: center;
 }
 
-.slika-radionice { 
-    background-color: #e0e0e0;
-    min-width: 150px;
-    height: 100px;
+.slika-radionice {
+    flex-shrink: 0;
+    width: 250px;
+    height: 200px;
+    background-color: #f0f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #888;
-    font-weight: bold;
-    flex-shrink: 0; 
+    font-size: 1.2em;
+    color: #555;
+    margin-right: 30px;
 }
 
-.detalji-radionice { 
-    flex-grow: 1; 
-    padding: 15px;
+.detalji-radionice {
+    flex-grow: 1;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    padding: 0;
 }
 
-.detalji-radionice .tekst { 
-    font-weight: bold;
-    font-size: 1.1em;
+.detalji-radionice .tekst {
+    font-size: 1.15em;
+    line-height: 1.6;
+    margin-bottom: 20px;
     color: #333;
 }
 
-.detalji-radionice .gumb { 
-    background-color: black;
+.detalji-radionice .gumb {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    background-color: #007bff;
     color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
     text-decoration: none;
-    font-weight: bold;
+    border-radius: 5px;
     transition: background-color 0.3s ease;
-}
-.detalji-radionice .gumb:hover {
-    background-color: #333;
+    align-self: flex-start;
 }
 
 
@@ -136,6 +131,7 @@ footer {
     font-size: 20px;
     justify-content: center;
     margin-top: auto; 
+    
 }
 
 footer a {
@@ -146,4 +142,145 @@ footer a {
 
 .ig { 
     font-size: 25px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack header items vertically */
+        padding: 1.5em 1em;
+        gap: 15px;
+        align-items: flex-start; /* Align items to the start of the column */
+    }
+
+    header a.minitvz {
+        margin-right: 0; /* Remove auto margin from 'minitvz' on mobile */
+        margin-bottom: 1em; /* Add space below 'minitvz' link */
+        font-size: 28px;
+    }
+
+    header a {
+        font-size: 18px;
+        margin-left: 0; /* Remove left margin from other links */
+        width: 100%; /* Make links take full width for easier tapping */
+        text-align: center; /* Center text within links */
+    }
+
+    /* .aktivan rule was empty in your original, if you need specific styling on mobile, add it here */
+    /* .aktivan {
+        background-color: #f0f0f0;
+    } */
+
+    .glavni-sadrzaj {
+        margin: 20px 15px; /* Adjust side margins for smaller screens */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .sekcija-filtriranja {
+        flex-direction: column; /* Stack filter label and select vertically */
+        align-items: center; /* Center them horizontally */
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .sekcija-filtriranja label,
+    .sekcija-filtriranja select {
+        display: block; /* Make them block elements to ensure stacking */
+        margin: 10px auto; /* Center them and add vertical space */
+        width: 80%; /* Adjust width for better fit */
+        max-width: 300px; /* Cap maximum width */
+    }
+
+    .lista-radionica {
+        /* If your base CSS had display:grid, this overrides it to flex for vertical stacking. */
+        display: flex;
+        flex-direction: column; /* Stack workshop items vertically */
+        gap: 30px; /* Space between stacked items */
+        width: 100%; /* Ensure it takes full width within main content */
+    }
+
+    .stavka-radionice {
+        flex-direction: column; /* Stack image and details vertically */
+        text-align: center;
+        align-items: center; /* Center content horizontally within the stacked item */
+        padding: 20px;
+    }
+
+    .slika-radionice {
+        width: 90%; /* Make image wider on small screens */
+        max-width: 300px; /* Limit maximum width */
+        height: 180px;
+        margin-right: 0; /* Remove right margin when stacked */
+        margin-bottom: 20px; /* Add space below the image */
+    }
+
+    .detalji-radionice {
+        width: 100%; /* Make details take full width */
+        text-align: center;
+        align-items: center; /* Center children (like the button) horizontally */
+    }
+
+    .detalji-radionice .tekst {
+        font-size: 1em; /* Adjust font size */
+        margin-bottom: 15px; /* Adjust margin */
+    }
+
+    .detalji-radionice .gumb {
+        padding: 10px 20px;
+        font-size: 1em;
+        width: 90%; /* Make button wider */
+        max-width: 250px; /* Limit button width */
+        align-self: center; /* Center the button within its parent column */
+    }
+
+    footer {
+        flex-direction: column; /* Stack footer content vertically */
+        padding: 1.5em 1em;
+        gap: 10px; /* Space between stacked items */
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 1em 0.5em; /* Further reduce header padding */
+    }
+
+    header a.minitvz {
+        font-size: 24px; /* Smaller font size for 'minitvz' */
+    }
+
+    header a {
+        font-size: 16px; /* Smaller font size for navigation links */
+    }
+
+    .glavni-sadrzaj {
+        margin: 15px 10px; /* Further reduce main content margins */
+    }
+
+    .sekcija-filtriranja select {
+        width: 90%; /* Make select wider on very small screens */
+    }
+
+    .stavka-radionice {
+        padding: 15px; /* Reduce padding for workshop items */
+    }
+
+    .slika-radionice {
+        height: 150px; /* Make image height smaller */
+    }
+
+    .detalji-radionice .tekst {
+        font-size: 0.95em; /* Slightly smaller text */
+    }
+
+    .detalji-radionice .gumb {
+        padding: 8px 15px; /* Smaller button padding */
+        font-size: 0.95em; /* Smaller button font size */
+    }
+
+    footer {
+        padding: 1em 0.5em; /* Further reduce footer padding */
+        font-size: 14px; /* Smaller footer font size */
+    }
 }
