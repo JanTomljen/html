@@ -4,13 +4,13 @@ body {
     font-family: "Exo 2", sans-serif;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; 
+    min-height: 100vh;
 }
 
 header {
     display: flex;
     background-color: #20a7a7;
-    justify-content: flex-end; 
+    justify-content: flex-end;
     padding: 2.5em;
     align-items: center;
 }
@@ -33,35 +33,41 @@ header a:hover {
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
 }
-.aktivan{
+
+.aktivan {
     font-weight: bold;
 }
-.minitvz{
+
+.minitvz {
     margin-right: auto;
     transform: none;
     font-weight: bold;
 }
-.minitvz:hover{
+
+.minitvz:hover {
     transform: none;
 }
-.glavni-sadrzaj { 
-    flex: 1; 
+
+.glavni-sadrzaj {
+    flex: 1;
     padding: 20px;
-    max-width: 800px; 
-    margin: 20px auto; 
+    max-width: 800px;
+    margin: 20px auto;
 }
 
-.sekcija-filtriranja { 
+.sekcija-filtriranja {
     margin-bottom: 30px;
     display: flex;
     align-items: center;
-    justify-content: flex-start; 
+    justify-content: flex-start;
 }
+
 .sekcija-filtriranja label {
     font-weight: bold;
     margin-right: 10px;
     font-size: 1.1em;
 }
+
 .sekcija-filtriranja select {
     padding: 8px;
     border: 1px solid #ccc;
@@ -124,15 +130,172 @@ header a:hover {
     align-self: flex-start;
 }
 
+.detalji-radionice .gumb:hover {
+    background-color: #0056b3;
+}
 
+/* --- Pop-up stilovi --- */
+.popup-pozadina {
+    display: none; /* Sakrij pop-up po defaultu */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7); /* Zatamnjena pozadina */
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-sadrzaj {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+/* Animacija pop-upa */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+.zatvori-popup {
+    color: #aaa;
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.zatvori-popup:hover,
+.zatvori-popup:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#forma-prijave h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-grupa {
+    margin-bottom: 15px;
+}
+
+.form-grupa label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-grupa input[type="text"],
+.form-grupa input[type="email"],
+.form-grupa input[type="tel"],
+.form-grupa textarea {
+    width: calc(100% - 22px); /* Oduzmi padding i border */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-grupa textarea {
+    resize: vertical; /* Omogući vertikalnu promjenu veličine */
+}
+
+.form-grupa-checkbox {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.form-grupa-checkbox input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+}
+
+.zavrsi-prijavu-gumb {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.zavrsi-prijavu-gumb:hover {
+    background-color: #218838;
+}
+
+#uspjesna-prijava {
+    text-align: center;
+    padding: 20px;
+}
+
+#uspjesna-prijava .ikona-uspjesno {
+    font-size: 5em;
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+#uspjesna-prijava h4 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#uspjesna-prijava p {
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.ponovi-stanje-gumb {
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ponovi-stanje-gumb:hover {
+    background-color: #5a6268;
+}
+
+.skriveno {
+    display: none !important;
+}
+
+/* --- Footer stilovi --- */
 footer {
     display: flex;
     background-color: rgb(0, 143, 143);
     padding: 2.5em;
     font-size: 20px;
     justify-content: center;
-    margin-top: auto; 
-    
+    margin-top: auto;
 }
 
 footer a {
@@ -141,44 +304,40 @@ footer a {
     margin-left: 10px;
 }
 
-.ig { 
+.ig {
     font-size: 25px;
 }
 
+/* --- Media Queries --- */
 @media (max-width: 768px) {
     header {
-        flex-direction: column; /* Stack header items vertically */
+        flex-direction: column;
         padding: 1.5em 1em;
         gap: 15px;
-        align-items: flex-start; /* Align items to the start of the column */
+        align-items: flex-start;
     }
 
     header a.minitvz {
-        margin-right: 0; /* Remove auto margin from 'minitvz' on mobile */
-        margin-bottom: 1em; /* Add space below 'minitvz' link */
+        margin-right: 0;
+        margin-bottom: 1em;
         font-size: 28px;
     }
 
     header a {
         font-size: 18px;
-        margin-left: 0; /* Remove left margin from other links */
-        width: 100%; /* Make links take full width for easier tapping */
-        text-align: center; /* Center text within links */
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
     }
 
-    /* .aktivan rule was empty in your original, if you need specific styling on mobile, add it here */
-    /* .aktivan {
-        background-color: #f0f0f0;
-    } */
-
     .glavni-sadrzaj {
-        margin: 20px 15px; /* Adjust side margins for smaller screens */
-        padding: 15px; /* Adjust padding */
+        margin: 20px 15px;
+        padding: 15px;
     }
 
     .sekcija-filtriranja {
-        flex-direction: column; /* Stack filter label and select vertically */
-        align-items: center; /* Center them horizontally */
+        flex-direction: column;
+        align-items: center;
         width: 100%;
         margin-bottom: 20px;
         text-align: center;
@@ -186,102 +345,135 @@ footer a {
 
     .sekcija-filtriranja label,
     .sekcija-filtriranja select {
-        display: block; /* Make them block elements to ensure stacking */
-        margin: 10px auto; /* Center them and add vertical space */
-        width: 80%; /* Adjust width for better fit */
-        max-width: 300px; /* Cap maximum width */
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+        max-width: 300px;
     }
 
     .lista-radionica {
-        /* If your base CSS had display:grid, this overrides it to flex for vertical stacking. */
         display: flex;
-        flex-direction: column; /* Stack workshop items vertically */
-        gap: 30px; /* Space between stacked items */
-        width: 100%; /* Ensure it takes full width within main content */
+        flex-direction: column;
+        gap: 30px;
+        width: 100%;
     }
 
     .stavka-radionice {
-        flex-direction: column; /* Stack image and details vertically */
+        flex-direction: column;
         text-align: center;
-        align-items: center; /* Center content horizontally within the stacked item */
+        align-items: center;
         padding: 20px;
     }
 
     .slika-radionice {
-        width: 90%; /* Make image wider on small screens */
-        max-width: 300px; /* Limit maximum width */
+        width: 90%;
+        max-width: 300px;
         height: 180px;
-        margin-right: 0; /* Remove right margin when stacked */
-        margin-bottom: 20px; /* Add space below the image */
+        margin-right: 0;
+        margin-bottom: 20px;
     }
 
     .detalji-radionice {
-        width: 100%; /* Make details take full width */
+        width: 100%;
         text-align: center;
-        align-items: center; /* Center children (like the button) horizontally */
+        align-items: center;
     }
 
     .detalji-radionice .tekst {
-        font-size: 1em; /* Adjust font size */
-        margin-bottom: 15px; /* Adjust margin */
+        font-size: 1em;
+        margin-bottom: 15px;
     }
 
     .detalji-radionice .gumb {
         padding: 10px 20px;
         font-size: 1em;
-        width: 90%; /* Make button wider */
-        max-width: 250px; /* Limit button width */
-        align-self: center; /* Center the button within its parent column */
+        width: 90%;
+        max-width: 250px;
+        align-self: center;
+    }
+
+    .popup-sadrzaj {
+        padding: 20px;
+    }
+
+    .form-grupa input[type="text"],
+    .form-grupa input[type="email"],
+    .form-grupa input[type="tel"],
+    .form-grupa textarea {
+        width: 100%; /* Adjust for better fit on mobile */
+        box-sizing: border-box; /* Include padding and border in element's total width */
     }
 
     footer {
-        flex-direction: column; /* Stack footer content vertically */
+        flex-direction: column;
         padding: 1.5em 1em;
-        gap: 10px; /* Space between stacked items */
+        gap: 10px;
         text-align: center;
     }
 }
 
 @media (max-width: 480px) {
     header {
-        padding: 1em 0.5em; /* Further reduce header padding */
+        padding: 1em 0.5em;
     }
 
     header a.minitvz {
-        font-size: 24px; /* Smaller font size for 'minitvz' */
+        font-size: 24px;
     }
 
     header a {
-        font-size: 16px; /* Smaller font size for navigation links */
+        font-size: 16px;
     }
 
     .glavni-sadrzaj {
-        margin: 15px 10px; /* Further reduce main content margins */
+        margin: 15px 10px;
     }
 
     .sekcija-filtriranja select {
-        width: 90%; /* Make select wider on very small screens */
+        width: 90%;
     }
 
     .stavka-radionice {
-        padding: 15px; /* Reduce padding for workshop items */
+        padding: 15px;
     }
 
     .slika-radionice {
-        height: 150px; /* Make image height smaller */
+        height: 150px;
     }
 
     .detalji-radionice .tekst {
-        font-size: 0.95em; /* Slightly smaller text */
+        font-size: 0.95em;
     }
 
     .detalji-radionice .gumb {
-        padding: 8px 15px; /* Smaller button padding */
-        font-size: 0.95em; /* Smaller button font size */
+        padding: 8px 15px;
+        font-size: 0.95em;
+    }
+
+    .popup-sadrzaj {
+        padding: 15px;
+    }
+
+    .zatvori-popup {
+        font-size: 30px;
+        top: 5px;
+        right: 10px;
+    }
+
+    #uspjesna-prijava .ikona-uspjesno {
+        font-size: 4em;
+    }
+
+    #uspjesna-prijava h4 {
+        font-size: 1.2em;
+    }
+
+    #uspjesna-prijava p {
+        font-size: 0.9em;
     }
 
     footer {
-        padding: 1em 0.5em; /* Further reduce footer padding */
-        font-size: 14px; /* Smaller footer font size */
+        padding: 1em 0.5em;
+        font-size: 14px;
     }
 }

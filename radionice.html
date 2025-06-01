@@ -24,8 +24,8 @@
         <a href="onama.html">O nama</a>
         <a href="radionice.html" class="aktivan">Radionice</a>
         <a href="partneri.html">Partneri</a>
-        <a href="galerija.html">Galerija</a>      
-        <a href="faq.html">FAQ</a>  
+        <a href="galerija.html">Galerija</a>       
+        <a href="faq.html">FAQ</a>    
     </header>
 
     <div class="glavni-sadrzaj">
@@ -44,14 +44,14 @@
                 <div class="slika-radionice">slika</div>
                 <div class="detalji-radionice">
                     <span class="tekst">tekst radionice 1 (za 6-8 godina)</span>
-                    <a href="#" class="gumb">Prijavi</a>
+                    <a href="#" class="gumb" data-radionica="Radionica 1 - 6-8 god.">Prijavi</a>
                 </div>
             </div>
             
             <div class="stavka-radionice uzrast-9-11">
                 <div class="slika-radionice">slika</div>
                 <div class="detalji-radionice"> <span class="tekst">tekst radionice 2 (za 9-11 godina)</span>
-                    <a href="#" class="gumb">Prijavi</a>
+                    <a href="#" class="gumb" data-radionica="Radionica 2 - 9-11 god.">Prijavi</a>
                 </div>
             </div>
             
@@ -59,7 +59,7 @@
                 <div class="slika-radionice">slika</div>
                 <div class="detalji-radionice">
                     <span class="tekst">tekst radionice 3 (za 12+ godina)</span>
-                    <a href="#" class="gumb">Prijavi</a>
+                    <a href="#" class="gumb" data-radionica="Radionica 3 - 12+ god.">Prijavi</a>
                 </div>
             </div>
             
@@ -67,7 +67,7 @@
                 <div class="slika-radionice">slika</div>
                 <div class="detalji-radionice">
                     <span class="tekst">tekst radionice 4 (za 6-8 godina)</span>
-                    <a href="#" class="gumb">Prijavi</a>
+                    <a href="#" class="gumb" data-radionica="Radionica 4 - 6-8 god.">Prijavi</a>
                 </div>
             </div>
             
@@ -75,7 +75,7 @@
                 <div class="slika-radionice">slika</div>
                 <div class="detalji-radionice">
                     <span class="tekst">tekst radionice 5 (za 9-11 godina)</span>
-                    <a href="#" class="gumb">Prijavi</a>
+                    <a href="#" class="gumb" data-radionica="Radionica 5 - 9-11 god.">Prijavi</a>
                 </div>
             </div>
             
@@ -83,17 +83,141 @@
                 <div class="slika-radionice">slika</div>
                 <div class="detalji-radionice">
                     <span class="tekst">tekst radionice 6 (za 12+ godina)</span>
-                    <a href="#" class="gumb">Prijavi</a>
+                    <a href="#" class="gumb" data-radionica="Radionica 6 - 12+ god.">Prijavi</a>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="prijavni-popup" class="popup-pozadina">
+        <div class="popup-sadrzaj">
+            <span class="zatvori-popup">&times;</span>
+            <div id="forma-prijave">
+                <h3>Prijava za radionicu: <span id="naslov-radionice-popup"></span></h3>
+                <form id="prijavna-forma">
+                    <div class="form-grupa">
+                        <label for="ime">Ime:</label>
+                        <input type="text" id="ime" name="ime" required>
+                    </div>
+                    <div class="form-grupa">
+                        <label for="prezime">Prezime:</label>
+                        <input type="text" id="prezime" name="prezime" required>
+                    </div>
+                    <div class="form-grupa">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-grupa">
+                        <label for="telefon">Tel. broj:</label>
+                        <input type="tel" id="telefon" name="telefon">
+                    </div>
+                    <div class="form-grupa">
+                        <label for="adresa">Adresa:</label>
+                        <input type="text" id="adresa" name="adresa" required>
+                    </div>
+                    <div class="form-grupa">
+                        <label for="dodatne-informacije">Dodatne informacije:</label>
+                        <textarea id="dodatne-informacije" name="dodatne_informacije" rows="4"></textarea>
+                    </div>
+                    <div class="form-grupa-checkbox">
+                        <input type="checkbox" id="obavijesti" name="obavijesti">
+                        <label for="obavijesti">Prihvaćam obavijesti o događajima</label>
+                    </div>
+                    <button type="submit" class="zavrsi-prijavu-gumb">Završi prijavu</button>
+                </form>
+            </div>
+            <div id="uspjesna-prijava" class="skriveno">
+                <span class="zatvori-popup">&times;</span>
+                <p class="ikona-uspjesno">&#10004;</p> <h4>Prijava uspješna!</h4>
+                <p>Provjerite svoj e-mail i potvrdite registraciju kako biste dovršili postupak.</p>
+                <p>Ako poruka nije stigla, provjerite spam ili pokušajte ponovno kasnije.</p>
+                <button type="button" class="ponovi-stanje-gumb">Ponovno stanje</button>
             </div>
         </div>
     </div>
 
     <footer>
         <a href="index.html">MiniTVZ</a>
-        <a href="https://www.instagram.com/minitvz/" target="_blank" class="ig"><i class="fab fa-instagram"></i></a>      
+        <a href="https://www.instagram.com/minitvz/" target="_blank" class="ig"><i class="fab fa-instagram"></i></a>       
     </footer>
     
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterUzrasta = document.getElementById('filter-uzrasta');
+            const stavkeRadionica = document.querySelectorAll('.stavka-radionice');
+
+            filterUzrasta.addEventListener('change', function() {
+                const odabraniUzrast = this.value;
+
+                stavkeRadionica.forEach(function(radionica) {
+                    if (odabraniUzrast === "" || radionica.classList.contains('uzrast-' + odabraniUzrast)) {
+                        radionica.style.display = 'flex';
+                    } else {
+                        radionica.style.display = 'none';
+                    }
+                });
+            });
+
+            // JavaScript za popup formu
+            const prijavniPopup = document.getElementById('prijavni-popup');
+            const gumbiPrijavi = document.querySelectorAll('.gumb');
+            const zatvoriPopupGumbi = document.querySelectorAll('.zatvori-popup');
+            const prijavnaForma = document.getElementById('prijavna-forma');
+            const uspjesnaPrijavaDiv = document.getElementById('uspjesna-prijava');
+            const formaPrijaveDiv = document.getElementById('forma-prijave');
+            const ponoviStanjeGumb = document.querySelector('.ponovi-stanje-gumb');
+            const naslovRadionicePopup = document.getElementById('naslov-radionice-popup');
+
+            gumbiPrijavi.forEach(button => {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault(); // Spriječi skrolanje na vrh stranice
+                    const radionicaNaslov = this.dataset.radionica; // Dohvati naziv radionice iz data-atributa
+                    naslovRadionicePopup.textContent = radionicaNaslov; // Postavi naslov u popupu
+                    formaPrijaveDiv.classList.remove('skriveno'); // Prikaži formu
+                    uspjesnaPrijavaDiv.classList.add('skriveno'); // Sakrij poruku o uspjehu
+                    prijavniPopup.style.display = 'flex'; // Prikaži cijeli popup
+                });
+            });
+
+            zatvoriPopupGumbi.forEach(button => {
+                button.addEventListener('click', function() {
+                    prijavniPopup.style.display = 'none'; // Sakrij popup
+                    prijavnaForma.reset(); // Resetiraj formu
+                });
+            });
+
+            prijavnaForma.addEventListener('submit', function(event) {
+                event.preventDefault(); // Spriječi stvarno slanje forme
+
+                // Ovdje biste poslali podatke forme na server (npr. putem AJAX-a)
+                // Za demonstraciju, jednostavno ćemo prikazati poruku o uspješnoj prijavi
+                
+                formaPrijaveDiv.classList.add('skriveno'); // Sakrij formu
+                uspjesnaPrijavaDiv.classList.remove('skriveno'); // Prikaži poruku o uspjehu
+            });
+
+            ponoviStanjeGumb.addEventListener('click', function() {
+                prijavniPopup.style.display = 'none'; // Sakrij popup
+                prijavnaForma.reset(); // Resetiraj formu
+            });
+
+            // Zatvaranje popupa klikom izvan sadržaja
+            prijavniPopup.addEventListener('click', function(event) {
+                if (event.target === prijavniPopup) {
+                    prijavniPopup.style.display = 'none';
+                    prijavnaForma.reset();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const filterUzrasta = document.getElementById('filter-uzrasta');
