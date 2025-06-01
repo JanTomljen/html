@@ -6,11 +6,11 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #f4f4f4; /* Added a default background color */
-    color: black; /* All text will be black by default */
+    background-color: #f4f4f4; 
+    color: black; 
 }
 
-/* --- HEADER STYLES --- */
+
 header {
     display: flex;
     background-color: #20a7a7;
@@ -18,7 +18,7 @@ header {
     padding: 2.5em;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    flex-wrap: wrap; /* Allows header items to wrap on smaller screens */
+    flex-wrap: wrap; 
 }
 
 header img {
@@ -28,7 +28,7 @@ header img {
 
 header a {
     text-decoration: none;
-    color: black; /* Explicitly set to black */
+    color: black; 
     transition: 0.3s;
     font-size: 20px;
     margin-left: 1em;
@@ -44,7 +44,7 @@ header a:hover {
     font-weight: bold;
 }
 
-.minitvz { /* Assuming this refers to the logo or a specific link */
+.minitvz { 
     margin-right: auto;
     transform: none;
     font-weight: bold;
@@ -54,53 +54,50 @@ header a:hover {
     transform: none;
 }
 
-/* --- MAIN CONTENT STYLES (SPECIFIC TO THE PARTNERS PAGE) --- */
-.kontejner {
+
+
+
+.container {
     max-width: 1300px;
-    margin: 30px auto; /* Adds top/bottom margin, auto-centers horizontally */
+    margin: 30px auto; 
     background: #fff;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    flex-grow: 1; /* Allows the container to take up available space */
+    flex-grow: 1; 
 }
 
 h1 {
     text-align: center;
-    color: black; /* Changed to black */
+    color: black; 
     margin-bottom: 30px;
 }
 
-.lista-partnera { /* Container for all partner items */
+.lista-partnera { 
     display: flex;
-    flex-direction: column; /* Partners stack vertically */
-    gap: 25px; /* Space between individual partners */
+    flex-direction: column; 
+    gap: 25px; 
 }
 
-.stavka-partnera { /* Individual partner item */
+.stavka-partnera { 
     background: #e9f7ff;
     border: 1px solid #cceeff;
     border-radius: 6px;
     padding: 20px;
-    display: flex; /* Partner item is also a flex container */
+    display: flex; 
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    transition: transform 0.2s;
     text-align: left;
 }
 
-.stavka-partnera:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
 
-.partner-sadrzaj { /* Div for the textual part of the partner */
+.partner-sadrzaj { 
     flex-grow: 1;
     text-align: left;
 }
 
-.partner-logo { /* Div for the partner logo */
+.partner-logo { 
     flex-shrink: 0;
     width: 100px;
     height: 100px;
@@ -174,12 +171,12 @@ h1 {
 .sadrzaj-modala h2,
 .sadrzaj-modala h3,
 .sadrzaj-modala p {
-    color: black; /* Ensure text inside modal is black */
+    color: black; 
 }
 
 .gumb-za-zatvaranje {
-    color: black; /* Changed to black */
-    position: absolute; /* Position relative to modal content */
+    color: black; 
+    position: absolute; 
     top: 15px;
     right: 25px;
     font-size: 28px;
@@ -197,18 +194,18 @@ h1 {
 .posjeti-partnera {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #28a745; /* Green button for visit link */
-    color: white !important; /* Ensure text is white */
+    background-color: #28a745; 
+    color: white !important; 
     text-decoration: none;
     border-radius: 5px;
-    margin-top: 15px; /* Space above the button */
-    align-self: center; /* Center the button in the modal */
+    margin-top: 15px; 
+    align-self: center; 
     transition: background-color 0.2s;
 }
 
 .posjeti-partnera:hover {
-    background-color: #218838; /* Darker green on hover */
-    transform: none; /* Remove any previous hover transform if inherited */
+    background-color: #218838; 
+    transform: none; 
 }
 footer {
     display: flex;
@@ -227,118 +224,4 @@ footer a {
 
 .ig { 
     font-size: 25px;
-}
-
-/* --- RESPONSIVE DESIGN (MEDIA QUERIES) --- */
-
-/* For screens smaller than 768px (standard tablets in portrait mode and mobile phones) */
-@media (max-width: 768px) {
-    /* Header */
-    header {
-        flex-direction: column;
-        padding: 1.5em 1em;
-        gap: 15px;
-        align-items: flex-start;
-    }
-
-    header img {
-        margin-right: 0;
-        margin-bottom: 1em;
-        height: 40px;
-    }
-
-    header a {
-        font-size: 18px;
-        margin-left: 0;
-        width: 100%;
-        text-align: center;
-    }
-    
-    .aktivan {
-        /* No change; font-weight: bold remains */
-    }
-
-    /* Content Container */
-    .kontejner {
-        margin: 20px 15px;
-        padding: 20px;
-    }
-
-    /* Partner Items */
-    .stavka-partnera {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-    }
-
-    .partner-sadrzaj {
-        text-align: center;
-        margin-bottom: 15px;
-    }
-
-    .partner-logo {
-        width: 80px;
-        height: 80px;
-    }
-
-    /* Modals */
-    .sadrzaj-modala {
-        width: 90%;
-        margin: 10% auto;
-        padding: 20px;
-    }
-
-
-}
-
-/* For screens smaller than 480px (smaller mobile phones) */
-@media (max-width: 480px) {
-    header {
-        padding: 1em 0.5em;
-    }
-
-    header img {
-        height: 35px;
-    }
-
-    header a {
-        font-size: 16px;
-    }
-
-    .kontejner {
-        margin: 15px 10px;
-        padding: 15px;
-    }
-
-    .stavka-partnera {
-        padding: 15px;
-    }
-
-    .stavka-partnera h2 {
-        font-size: 1.2em;
-    }
-
-    .stavka-partnera p {
-        font-size: 0.9em;
-    }
-
-    .stavka-partnera a {
-        padding: 8px 12px;
-        font-size: 0.9em;
-    }
-
-    .partner-logo {
-        width: 70px;
-        height: 70px;
-    }
-
-    .sadrzaj-modala {
-        padding: 15px;
-    }
-    
-    /* Footer (UNCHANGED AS PER REQUEST) */
-    /* footer {
-        padding: 1em 0.5em;
-        font-size: 16px;
-    } */
 }
